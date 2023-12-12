@@ -1,0 +1,916 @@
+.landingPage{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    overflow-x: hidden;
+    font-family: 'Space Mono', monospace;
+  }
+
+.moreInfo{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    overflow-x: hidden;
+    font-family: 'Space Mono', monospace;
+}
+
+.navigation {
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    column-gap: 50px;
+    font-size: 15px;
+    font-family: 'Space Grotesk', sans-serif;
+    position: sticky;
+    border-bottom: 1px solid rgb(219, 219, 219);
+    align-items: center;
+}
+
+.navigation img{
+    max-width: 2.5vw;
+    cursor: pointer;
+}
+
+.navContent{
+    display: flex;
+    column-gap: 2vw;
+}
+
+.navigation a:hover{
+    font-weight: bold;
+}
+
+.header {
+    font-size: 5em;
+    font-weight:normal;
+    height: 20vh;
+    padding: 0;
+    margin-left: 2vw;
+    transition: height .5s linear;
+}
+
+.headerSection:hover .header {
+    height: 30vh;
+}
+
+.headerActive {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    width: fit-content;
+    margin-left: 2vw;
+    column-gap: 50px;
+}
+
+
+
+.headArrow {
+    display: none;
+    font-size: 0em;
+    padding-right: 0;
+    opacity: 0;
+    font-size: 1em;
+    animation: slidein .5s;
+}
+
+.headerSection:hover .header .headActive .headArrow {
+    display: inline;
+    opacity: 100%;
+    padding-right: 25px;
+}
+
+.headerSection:not(:hover) .header .headActive .headArrow {
+    display: inline;
+    opacity: 0%;
+    padding-right: 0px;
+    animation: slideout .5s;
+}
+
+.headerSection {
+    padding: 1.25em;
+    background: none;
+    border-bottom: 1px solid rgb(219, 219, 219);
+}
+
+.headerSection:hover {
+    background-color: #F9F9F9;
+}
+
+.headerSection:hover .header .occupationContainer {
+    display: flex;
+}
+
+.occupationContainer {
+    display: none;
+    opacity: 0;
+    flex-direction: column;
+    row-gap: 15px;
+    font-size: 16px;
+    font-family: 'Space Grotesk', sans-serif;
+    margin-top: 1em;
+    margin-left: 3em;
+}
+
+.projectSection {
+    padding: 1.25em;
+    padding-bottom: 0;
+    height: 100vh;
+    border-bottom: 1px solid rgb(219, 219, 219);
+}
+
+.projectSection:hover {
+    background-color: #F9F9F9;
+}
+
+.projectSection .sectionTitle {
+    margin-left: 2vw;
+}
+
+.projectDisplaySection {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 20px;
+    padding-top: 30px;
+    padding-bottom: 0;
+    width: inherit;
+    position: absolute;
+    left:0%;
+    right: 0%;
+    column-gap: 20px;
+    scroll-behavior:smooth;
+}
+
+.project {
+    height: 36.625em;
+    min-width: 64.3125em;
+    border-radius: 10px;
+    background-color: ghostwhite;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-size: cover;
+}
+
+.tutorialContainer{
+    z-index: 1000;
+    background: none;
+    width: max-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.tutorialTextContainer{
+    display: flex;
+    align-items: center;
+    column-gap: .5vw;
+}
+.tutorialText{
+    color: #b5b5b5;
+    padding: 1vw;
+    border-radius: 1vw;
+    align-self: center;
+    font-size: 1vw;
+}
+
+.tutorialTextButton{
+    font-size: 1vw;
+    padding: 1vw 1.2vw;
+    border-radius: .5vw;
+    border: none;
+    background-color: #e5e5e5;
+    color: #b5b5b5;
+}
+
+.tutorialTextButton:hover{
+    background-color: #E30D43;
+    color: white;
+    cursor: pointer;
+}
+
+.projectSlider{
+    position: absolute;
+    animation: marquee 5s linear infinite;
+}
+
+.projectBorders {
+    display: none;
+}
+
+.projectDescriptionContainer {
+    opacity: 0%;
+    padding: 1.25em;
+    background-color: green;
+    height: 165px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: rgba(87, 87, 87, 0.73);
+    backdrop-filter: blur(20px);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    transform-origin: bottom left;
+    transition: opacity .4s;
+}
+
+.project:hover .projectDescriptionContainer {
+    opacity: 100%;
+
+}
+
+.descriptionSection {
+    color: white;
+}
+
+.projectBtn {
+    width: max-content;
+    height: max-content;
+    padding: 1vw;
+    border-radius:.5vw;
+    border: none;
+    background-color: #E30D43;
+    color: white;
+    font-family: 'Space Mono', sans-serif;
+    font-size:1vw;
+    white-space: normal;
+}
+
+.projectBtn:hover {
+    background-color: white;
+    color: #E30D43;
+}
+
+.buttonSection {
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    margin-right: 20px;
+}
+
+.projectHeader {
+    margin-left: 2vw;
+    font-weight: 400;
+}
+
+.projectLanguages {
+    max-width: 216px;
+    word-break: keep-all;
+    white-space: normal;
+    margin-left: 3.5vw;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.projectDate {
+    color: white;
+    align-self: flex-end;
+    padding: 20px;
+    margin-right: 3vw;
+}
+
+.projectBorders {
+    display: none;
+}
+
+.project:hover .projectBorders {
+    position: absolute;
+    display: block;
+    border: .5px solid rgb(190, 190, 190);
+    align-self: center;
+    height: 555px;
+    min-width: 1000px;
+    padding: 20px;
+    margin-left: 0;
+    margin-top: -5px;
+    border-radius: 10px;
+}
+
+.arrow {
+    font-family: 'Space Mono', sans-serif;
+}
+
+.occupation {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    row-gap: 5px;
+    width: fit-content;
+    margin-left: 6vw;
+    color: #b5b5b5;
+    font-weight: bold;
+}
+
+.arrow {
+    margin: 0;
+    display: none;
+}
+
+.job {
+    margin: 0;
+}
+
+.contactSection{
+    height:auto;
+    padding-top: 2em;
+    padding-bottom: 12em;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.contactSection .sectionTitle{
+    margin-left: 5vw;
+}
+
+.contactSection:hover{
+    background: #F9F9F9;
+}
+
+.displayContactsInfo{
+    align-self: center;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    width: 25em;
+    max-width: 25em;
+}
+
+.contacts{
+    width: 25em;
+    max-width: 25em;
+    display: flex;
+    margin-top: 5em;
+    justify-content: center;
+    column-gap: 30px;
+    flex-wrap:wrap;
+}
+
+.contacts a:hover{
+    font-weight: bold;
+}
+
+.footerSection{
+    background-color: #E30D43;
+    height: 30%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.copyright{
+    color: white;
+    margin-left: 5vw;
+    font-size: 0.75em;
+    margin-bottom: 3em;
+    left: 0;
+}
+
+.logo{
+    margin-top: 5vh;
+    margin-left: 5vw;
+    width: 2.065em;
+}
+
+.dataSection{
+    height: auto;
+    padding: 5vw;
+    padding-bottom: 10vw;
+    border-bottom: 1px solid rgb(219, 219, 219);
+    font-family: 'Space Grotesk', sans-serif;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+}
+
+.dataSectionShow{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    column-gap: 1vw;
+}
+
+.dataSection:hover {
+    background-color: #fefefe;
+}
+
+.dataProject{
+    display: flex;
+    flex-direction: column;
+    padding: 2vw;
+    width: max-content;
+    height: max-content;
+    background-color: #F4F4F4;
+    border-radius: 5px;
+    justify-content: space-between;
+}
+
+.dataProjectName{
+    font-size: 1.5vw;
+    font-weight: 400;
+}
+.dataLanguagesSection{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0;
+    max-width: 100%;
+    flex-wrap: wrap;
+}
+
+.dataProjectFoot{
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 1em;
+}
+
+.projectLink{
+    background-color: #ffffff;
+    color:#E30D43;
+    text-decoration: none;
+    padding: 15px;
+    width: fit-content;
+    height: auto;
+    border: 2px dashed #E30D43;
+    border-radius: 5px;
+    justify-self: center;
+    font-weight: bold;
+}
+
+.projectLink:hover{
+    border: 2px solid #E30D43;
+}
+
+.dataLanguageLabel{
+    background-color: white;
+    border-radius: .5vw;
+    margin: 10px;
+    padding: 0.5vw 1vw .5vw 1vw;
+    font-size: .7vw;
+    font-family: 'Space Mono', sans-serif;
+    width: max-content;
+    text-align: center;
+    color: #151515;
+    
+}
+
+.titleSection{
+    padding: 1.25em;
+    height: auto;
+    padding-bottom: 5em;
+    padding-top: 5em;
+    padding-left: 0;
+    margin-left: 0;
+    border-bottom: 1px solid rgb(219, 219, 219);
+    display: flex;
+    column-gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.titleSection a{
+    color: #E30D43;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.titleSection a:hover{
+    text-decoration:underline;
+}
+
+.titleInfo{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    padding-top: 3rem;
+}
+
+.titleInfo h2{
+    font-weight: bold;
+    font-size: 1.875;
+    color: #151515;
+}
+
+.infoDescriptionSection{
+    margin-top: 1rem;
+}
+
+.infoDescriptionSection h3{
+    font-weight: 200;
+    font-size: 1.1rem;
+}
+
+.infoDescription{
+    font-size: .65rem;
+    margin-left: 2rem;
+    width: inherit;
+    max-width: 30em;
+    line-height: 1.2rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: lighter;
+}
+
+.titleSection:hover {
+    background-color: #F9F9F9;
+}
+
+.prevPause{
+    width: 43.75rem;
+    height: 24.1rem;
+    background-color:#D9D9D9;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: bold;
+    font-size: larger;
+    color: white;
+}
+
+.prevController{
+    background-color: #E30D43;
+    width: 5rem;
+    height: 5rem;
+    padding: 20px;
+    border-radius: 100%;
+    border: none;
+    outline: none;
+    color: white;
+    text-align: center;
+    position: absolute;
+    margin-left: 36.75rem;
+    margin-top:17.4375rem;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.prevController:hover{
+    background-color: #ef1148;
+}
+
+.previewVideoContainer{
+    display: flex;
+    max-width: fit-content;
+    max-height: 28.4375rem;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 8px 10px 10px #ededed;
+    background: none;
+}   
+
+.previewVideo{
+    width: 43.75rem;
+    height: 24.1rem;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+}
+
+.breakdownSection{
+    display: flex;
+    padding: 5em;
+    flex-direction: column;
+    padding-bottom: 7em;
+}
+
+.breakdownSection .sectionTitle{
+    font-size: 2rem;
+    font-weight: 600;
+    color: #ef1148;
+}
+
+.breakdownBody{
+    align-self: center;
+    justify-self: center;
+    max-width: 50em;
+    font-size: .9em;
+    line-height: 2em;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: lighter;
+}
+
+.breakdownBody a{
+    color: #E30D43;
+}
+.breakdownBody h2{
+    color: #E30D43;
+    font-weight: 500;
+    margin: 0;
+}
+
+.breakdownBody p{
+    font-size: 12px;
+}
+
+.breakdownBody h3, h4, h5, h6{
+    font-weight: 400;
+    color: #2e2e2e;
+}
+
+.breakdownBody a:hover{
+    opacity: .80;
+}
+
+a{
+    text-decoration: none;
+    color: #151515;
+    cursor: pointer;
+}
+
+@keyframes marquee {
+    0%{
+        left: -100%;
+    }
+
+    100%{
+        left:100%;
+    }
+}
+
+@keyframes slidein {
+    from {
+        opacity: 0%;
+        padding-right: 0px;
+        display: none;
+    }
+
+    to {
+        display: inline;
+        opacity: 100%;
+        padding-right: 25px;
+    }
+}
+
+@keyframes animateButton {
+    from {
+        margin-bottom: 0;
+    }
+
+    to {
+        margin-bottom: 20px;
+    }
+}
+
+@keyframes slideout {
+    0% {
+        opacity: 100%;
+        padding-right: 25px;
+        display: inline;
+    }
+
+    100% {
+        display: none;
+        opacity: 0%;
+        padding-right: 0px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .tutorialTextContainer{
+        display: none;
+    }
+
+    .header {
+        font-size: 1.5em;
+        height: auto;
+    }
+
+    .navigation{
+        justify-content: center;
+    }
+
+    .navigation img{
+        display: none;
+    }
+
+    .headActive {
+        margin: 0;
+        padding: 0;
+    }
+
+    .headerSection:hover .header {
+        height: auto;
+    }
+
+    .projectBorders{
+        display: none;
+    }
+
+    .project:hover .projectBorders{
+        display: none;
+    }
+
+    .projectDisplaySection {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        position: relative;
+        padding: 0;
+        margin: 0;
+        height: auto;
+        width: auto;
+        left: 0;
+        right: 0;
+        row-gap: 5vw;
+        scroll-behavior: smooth;
+    }
+
+    .project {
+        height: 60vw;
+        min-width: 100%;
+    }
+
+    .projectDescriptionContainer{
+        height:20vw;
+        position: relative;
+        max-width: inherit;
+        padding: 0;
+        opacity: 100%;
+    }
+
+    .projectHeader{
+        font-size: 2.5vw;
+        margin: .5rem;
+        color: #F9F9F9;
+    }
+
+    .projectLanguages{
+        font-size: 1.2vw;
+    }
+
+    .projectBtn{
+        width: 10vw;
+        height: 10vw;
+    }
+
+    .projectDate{
+        font-size: .2em;
+    }
+
+    .buttonSection{
+        right: 1rem;
+        align-items: center;
+    }
+
+    .job {
+        font-size: .6em;
+    }
+    .projectSection{
+        height: auto;
+        padding-bottom: auto;
+    }
+
+    .dataSection{
+        display: flex;
+        flex-direction: column;
+        padding: .5em;
+        padding-top: 2em;
+        padding-bottom: 5em;
+    }
+
+    .dataSectionShow{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0;
+        row-gap: 10px;
+        flex-wrap: wrap;
+    }
+    
+    .dataProject{
+        display: flex;
+        flex-direction: column;
+        padding: 3em;
+        width: inherit;
+        height: auto;
+        background-color: #F4F4F4;
+        border-radius: 5px;
+        justify-content: space-between;
+    }
+    
+    .dataProjectName{
+        font-size: 1rem;
+        font-weight: 200;
+    }
+    
+    .redirectButton{
+        background-color: #E30D43;
+        border: none;
+        color: white;
+        width: 100%;
+        height: auto;
+        align-self: center;
+        margin-left: 0;
+        border-radius: 10px;
+        font-size: 1.5rem;
+        font-family: 'Space Mono', sans-serif;
+        padding: 1.25rem;
+    }
+
+    .redirectButton:hover{
+        margin-bottom: 0;
+        filter: none;
+    }
+    
+    .dataLanguagesSection{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 0;
+    }
+    
+    .dataProjectFoot{
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .projectLink{
+        background-color: #ffffff;
+        color:#E30D43;
+        text-decoration: none;
+        padding: 5px;
+        width: 3rem;
+        height: auto;
+        border: 2px dashed #E30D43;
+        border-radius: 5px;
+        justify-self: center;
+        font-weight: bold;
+        font-size: .5rem;
+    }
+    
+    .dataLanguageLabel{
+        margin: 3px;
+        padding: 0.5rem;
+        font-size: .4rem;
+        width: fit-content;
+        min-width: fit-content;
+    }
+
+    .breakdownSection{
+        width: 100%;
+        padding: 0;
+        padding-bottom: 5em;
+    }
+
+    .breakdownBody{
+        font-size: .8rem;
+        padding: 0;
+        max-width: 90%;
+    }
+
+    .prevPause{
+        width: inherit;
+        max-height: inherit;
+    }
+
+    .previewVideoContainer{
+        padding: .8em;
+        background-color: #ffffff;
+        box-shadow: none;
+        height: fit-content;
+        max-height: 70vw;
+        width: 90vw;
+        flex-wrap: wrap;
+        row-gap: 10px;
+    }
+
+    .previewVideo{
+        width:inherit;
+        max-height: inherit;
+    }
+
+    .prevController{
+        position:absolute;
+        margin: 10px;
+        padding: 0;
+        border-radius: 10px;
+        width: 4rem;
+        height: 4rem;
+        left: 5%;
+        
+    }
+
+    .titleSection{
+        padding: 2em;
+        margin: 0;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
