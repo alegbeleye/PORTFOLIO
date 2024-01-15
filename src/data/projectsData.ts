@@ -125,17 +125,6 @@ export const projects: ProjectInfo[] = [
                 `
             }, 
     {
-        id: 3,
-        name: "P2P Video Chat Application",
-        completedYear: 2023,
-        languages: "React, Typescript, socketIO, ExpressJS, Simple-Peer",
-        imgURL: videoPng,
-        gifURL: videoGif,
-        link: 'https://github.com/alegbeleye/Video-Chat-Software.git',
-        description: 'A application that allows users to host one-on-one video meetings on the web, using websockets and Typescript.',
-        body: "<p>Before embarking on this project, i aimed to develop an easy to use interface that would require little to get started using the application. I decided to take to figma and draw out a prototyope of the application before developing the software. <br/> After prototyping i had a good idea on what the app should look like, so i began developing the software, with the prototype as a reference. <br/>For the development of this program, I made use of the <b>SocketIO</b> library to send signals, and allow the client side interact with the server seamlessly (Mostly for sending chat messages). For the video and audio end, I used the <b>SimplePeer</b> to handle the transfer of audio and video signals, as well as managing the ICE candidates. <br/><br/> The applicaiton was developed using Typescript, React and Node/ExpressJS."
-    },
-    {
         id: 4,
         name: "Real Estate Landing Page",
         completedYear: 2023,
@@ -144,6 +133,61 @@ export const projects: ProjectInfo[] = [
         gifURL: landPrev,
         link: 'https://github.com/alegbeleye/Real-Estate-Landing-Page.git',
         description: 'A React reacreation of a real estate user interface, displaying several views of the property to be sold.',
-        body: "<p>During the summer of 2023, I took off to dribbble to find captivating user interfaces, and see if i could bring the designs to life through code. I stumbled upon a Real Estate landing page which caught my attention and decided to develop a live working version using React and Typescript. At the time I had just begun learning typescript which was more motivation to complete the project."
+        body: 
+        `
+        <h2>Context</h2>
+        <p>
+            Using React, HTML, and CSS, I developed a landing page for a real estate company. The page features background animations that dynamically change, creating an engaging visual experience for visitors.
+        </p>
+        <br>
+        <hr>
+        <br>
+        <h2>Technical Analysis</h2>
+
+        <h3>Challenge 1: Background Animation</h3>
+        <p>
+            Implementing smooth background animations posed challenges in terms of creating visually appealing transitions and controlling animation speed.
+        </p>
+
+        <h3>Solution:</h3>
+        <p>
+            To overcome these challenges, I utilized CSS transitions to achieve smoother background changes. Additionally, I fine-tuned the animation speed to ensure an optimal user experience.
+        </p>
+
+        <h3>Challenge 2: Responsive Design</h3>
+        <p>
+            Ensuring the landing page looks good on various devices and screen sizes required careful consideration of responsive design principles.
+        </p>
+
+        <h3>Solution:</h3>
+        <p>
+            I used CSS Flexbox and Grid to create a responsive design, ensuring that the landing page is visually appealing and functional across different devices and screen resolutions.
+        </p>
+
+        <h3>Challenge 3: Image Optimization</h3>
+        <p>
+            Balancing image quality and page load times was crucial for a smooth user experience.
+        </p>
+
+        <h3>Solution:</h3>
+        <p>
+            I optimized images by compressing and resizing them, reducing load times while maintaining visual quality. Responsive image techniques were employed to adapt to various screen sizes.
+        </p>
+
+        <h3>Challenge 4: SEO Considerations</h3>
+        <p>
+            Implementing basic SEO practices for better visibility in search engine results required attention to meta tags and descriptions.
+        </p>
+
+        <h3>Solution:</h3>
+        <p>
+            I added relevant meta tags and descriptions to improve the landing page's search engine optimization, making it more discoverable to users.
+        </p>
+        <hr>
+        <br>
+        <p>
+            These challenges, while significant, contributed to the learning experience and the development of a landing page that not only meets the visual expectations of users but also provides a seamless and responsive user experience.
+        </p>
+        `
     },
 ]
